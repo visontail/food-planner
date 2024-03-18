@@ -1,17 +1,21 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Search from '../features/Search'
 
 
-function BrowsePage() {
+function RecipesPage() {
+  
+
   return (
     <>
       <Header />
       <div>
-      <h2>THIS IS THE browse PAGE</h2>
+        <h2>THIS IS THE recipes PAGE</h2>
+        <Search />
       </div>
       <Footer />
     </>
   )
 }
 
-export default BrowsePage
+export default RecipesPage
