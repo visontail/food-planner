@@ -57,7 +57,7 @@ function Generator() {
   };
 
   return (
-    <div className="shadow-2xl rounded-[20px] p-4 mx-6 mb-10">
+    <div className="shadow-2xl rounded-[20px] p-4 mx-6 mb-10 min-w-fit">
       <h2 className="text-2xl font-semibold text-default-orange">Categories</h2>
       <p>Select the desired categories</p>
       <ul className="flex flex-wrap gap-2 m-4">

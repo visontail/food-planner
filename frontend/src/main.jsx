@@ -7,6 +7,8 @@ import HomePage from './pages/HomePage'
 import BrowsePage from './pages/BrowsePage'
 import AboutPage from './pages/AboutPage'
 import NotFoundPage from './pages/NotFoundPage'
+import ItemPage from './pages/ItemPage'
+
 
 import './index.css'
 
@@ -23,6 +25,12 @@ const router = createBrowserRouter([
   {
     path: '/browse',
     element: <BrowsePage />,
+    children: [
+      {
+        path: '/browse/:id/',
+        element: <ItemPage />,
+      },
+    ],
   },
 ])
 

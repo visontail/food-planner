@@ -1,16 +1,16 @@
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 
-function AboutPage() {
+function ItemPage() {
   return (
     <>
       <Header />
       <div>
-        <h2>THIS IS THE about PAGE</h2>
+        <h2>THIS IS THE item PAGE</h2>
       </div>
       <Footer />
     </>
   )
 }
 
-export default AboutPage
+export default ItemPage

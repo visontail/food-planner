@@ -7,7 +7,7 @@ function BrowsePage() {
     <>
       <Header />
       <div>
-      <h2>THIS IS THE "browse" PAGE</h2>
+      <h2>THIS IS THE browse PAGE</h2>
       </div>
       <Footer />
     </>
