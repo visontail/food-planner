@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchCategories, fetchMealsWithinCategories } from '../services/api';
+import { fetchCategories, fetchMealsWithinCategories } from '../services/api.js';
 
 function Generator() {
 
