@@ -16,19 +16,9 @@ export const fetchCategories = async () => {
     }
 };
 
-export const fetchMeals = async (plan) => {
+export const fetchMealsWithinCategories = async (num, categories) => {
     try {
-        const response = await axios.get(`${API_URL}/plan/${plan}`);
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching meals:', error);
-        throw error;
-    }
-};
-
-export const fetchMealsWithinCategories = async (plan, categories) => {
-    try {
-        const response = await axios.get(`${API_URL}/plan/${plan}/${categories.join(',')}`);
+        const response = await axios.get(`${API_URL}/plan/${num}/${categories.join(',')}`);
         return response.data;
     } catch (error) {
         console.error('Error fetching meals:', error);

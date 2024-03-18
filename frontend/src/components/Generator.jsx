@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchCategories, /* fetchMeals,  */ fetchMealsWithinCategories } from '../services/api';
+import { fetchCategories, fetchMealsWithinCategories } from '../services/api';
 
 function Generator() {
 
@@ -36,12 +36,19 @@ function Generator() {
     }
 
   // fetch data from backend
-  const getMeal = async (selectedCategories) => {
+  const getMeal = async (numberOfMeals, selectedCategories, categories) => {
     try {
+      // if no number of meals is selected, default to 3
+      if (!numberOfMeals || numberOfMeals === "") {
+        numberOfMeals = 3;
+      }
+      // if no categories are selected, default to all categories
+      if (!selectedCategories || selectedCategories.length === 0) {
+        selectedCategories = categories;
+      }
       const responseMealsWithinCategories = await fetchMealsWithinCategories(numberOfMeals, selectedCategories);
       if (!responseMealsWithinCategories || responseMealsWithinCategories === "") {
         console.error("Failed to fetch meals");
-        //const responseMeals = await fetchMeals(numberOfMeals);
       }
       setMeals(responseMealsWithinCategories);
     } catch (error) {
@@ -76,7 +83,7 @@ function Generator() {
       >
         <option value="1">1</option>
         <option value="2">2</option>
-        <option value="3" selected>3</option>
+        <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
         <option value="6">6</option>
@@ -85,7 +92,7 @@ function Generator() {
       <hr className="my-6 border-orange-200" />
       <button
         className="bg-default-orange text-white py-2 px-4 rounded-2xl border-r hover:bg-hover-orange"
-        onClick={() => getMeal(selectedCategories)}
+        onClick={() => getMeal(numberOfMeals, selectedCategories, categories)}
       >
         Generate
       </button>
