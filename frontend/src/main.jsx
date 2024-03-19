@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import HomePage from './pages/home/HomePage'
-import BrowsePage from './pages/RecipesPage'
+import RecipesPage from './pages/RecipesPage'
 import AboutPage from './pages/AboutPage'
 import NotFoundPage from './pages/NotFoundPage'
 import ItemPage from './pages/ItemPage'
@@ -23,14 +23,12 @@ const router = createBrowserRouter([
     element: <AboutPage />,
   },
   {
-    path: '/browse',
-    element: <BrowsePage />,
-    children: [
-      {
-        path: '/browse/:id/',
-        element: <ItemPage />,
-      },
-    ],
+    path: '/recipes',
+    element: <RecipesPage />,
+  },
+  {
+    path: '/recipes/:recipeId',
+    element:  <ItemPage />,
   },
 ])
 
