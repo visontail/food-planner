@@ -1,13 +1,24 @@
+import PropTypes from 'prop-types';
 
+function Search({ onSearch }) {
+  Search.propTypes = {
+    onSearch: PropTypes.func.isRequired,
+  };
+  const handleChange = (e) => {
+      const value = e.target.value;
+      onSearch(value);
+  };
 
-function Search() {
-    // search logic goes here
   return (
-    <>
-        <p>search field</p>
-        <input type="text" name="" id="" placeholder="search.." />
-    </>
-  )
+      <>
+          <p>Search field</p>
+          <input
+              type="text"
+              placeholder="Search by name or category"
+              onChange={handleChange}
+          />
+      </>
+  );
 }
 
-export default Search
+export default Search;
