@@ -37,7 +37,7 @@ router.get('/categories', async (req, res) => {
         res.status(500).json({ message: 'Server Error' });
     }
 });
-// Route to get "all" item (no limit)
+// Route to get "all" item
 router.get('/all', async (req, res) => {
     try {
         const items = await collection.find({}, { projection: { _id: 1, name: 1, category: 1, image_url: 1 } }).toArray();
