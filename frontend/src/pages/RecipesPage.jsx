@@ -10,7 +10,6 @@ import { fetchAllMeals } from '../services/api.js'
 function RecipesPage() {
   const [meals, setMeals] = useState([]);
   const [filteredMeals, setFilteredMeals] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
       const fetchData = async () => {
@@ -29,7 +28,6 @@ function RecipesPage() {
   }, []);
 
   const handleSearch = (query) => {
-      setSearchQuery(query);
       const filtered = meals.filter(
           (meal) =>
               meal.name.toLowerCase().includes(query.toLowerCase()) ||
@@ -48,7 +46,7 @@ function RecipesPage() {
               <Search onSearch={handleSearch} />
               <div>
                   {filteredMeals.length === 0 ? (
-                      <p>No items found matching "{searchQuery}"</p>
+                      <p>No items were found</p>
                   ) : (
                       filteredMeals.map((meal) => (
                           <div key={meal._id} className="border-2 border-red-300">
