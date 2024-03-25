@@ -42,27 +42,27 @@ function RecipesPage() {
       <>
           <Header />
           <div>
-              <h2>THIS IS THE recipes PAGE</h2>
+              <h2 className="text-xl font-bold mb-4">THIS IS THE recipes PAGE</h2>
               <Search onSearch={handleSearch} />
-              <div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {filteredMeals.length === 0 ? (
                       <p>No items were found</p>
                   ) : (
                       filteredMeals.map((meal) => (
-                          <div key={meal._id} className="border-2 border-red-300">
+                          <div key={meal._id} className="border rounded-lg overflow-hidden shadow-lg">
                               <Link to={`/recipes/${meal._id}`}>
-                                  <img /* src={meal.image_url} */ alt={meal.name} />
+                                  <img className="w-full h-auto" /* src={meal.image_url} */ alt={meal.name} />
                               </Link>
-                              <div>
-                                  <h3>{meal.name}</h3>
-                                  <p>
+                              <div className="p-4">
+                                  <h3 className="text-lg font-bold mb-2">{meal.name}</h3>
+                                  <p className="text-sm mb-2">
                                       {meal.category.map((category, index) => (
                                           <span key={index} className="mr-2">
                                               {category}
                                           </span>
                                       ))}
                                   </p>
-                                  <Link to={`/recipes/${meal._id}`}>View Details</Link>
+                                  <Link to={`/recipes/${meal._id}`} className="text-default-orange hover:text-hover-orange">View Details</Link>
                               </div>
                           </div>
                       ))

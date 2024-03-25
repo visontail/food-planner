@@ -9,7 +9,6 @@ import { fetchSelectedMeal } from "../services/api.js"
 function ItemPage() {
 
   const recipeId = useParams().recipeId;
-  console.log(recipeId);
 
   const [item, setItem] = useState({});
 
