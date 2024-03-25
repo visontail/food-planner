@@ -41,8 +41,7 @@ function RecipesPage() {
   return (
       <>
           <Header />
-          <div>
-              <h2 className="text-xl font-bold mb-4">THIS IS THE recipes PAGE</h2>
+          <div className="mb-12">
               <Search onSearch={handleSearch} />
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {filteredMeals.length === 0 ? (
