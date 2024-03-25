@@ -24,12 +24,12 @@ function Generator() {
     }, []);
 
     function selectItem(category) {
-        if (selectedCategories.includes(category)) {
+      if (selectedCategories.includes(category)) {
           setSelectedCategories(selectedCategories.filter((item) => item !== category));
-            return;
-        }
-        setSelectedCategories([...selectedCategories, category]);
-    }
+      } else {
+          setSelectedCategories([...selectedCategories, category]);
+      }
+  }
 
     function changeNumberOfMeals(number) {
         setNumberOfMeals(number);
@@ -51,6 +51,7 @@ function Generator() {
         console.error("Failed to fetch meals");
       }
       setMeals(responseMealsWithinCategories);
+      setSelectedCategories(['']);
     } catch (error) {
       console.error(error);
     }
@@ -64,7 +65,7 @@ function Generator() {
         {Array.isArray(categories) && categories.length > 0 ? (
           categories.map((category, index) => (
             <li
-              className="text-default-orange hover:bg-orange-200 hover:text-hover-orange px-2 py-1 rounded-full cursor-pointer"
+            className={`px-2 py-1 rounded-full cursor-pointer ${selectedCategories.includes(category) ? 'bg-orange-200 text-hover-orange' : 'text-default-orange hover:bg-orange-200 hover:text-hover-orange'}`}
               key={index}
               onClick={() => selectItem(category)}
             >
