@@ -2,7 +2,7 @@
 
 function Footer() {
   return (
-    <div className="text-hover-orange flex justify-center">
+    <div className="text-orange-800 flex justify-center">
       <p>© {new Date().getFullYear()}</p>
     </div>
   )

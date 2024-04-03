@@ -41,7 +41,7 @@ function RecipesPage() {
   return (
     <>
       <Header />
-      <div className="mb-12 text-orange-300">
+      <div className="mb-12 text-orange-800">
         <Search onSearch={handleSearch} />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {filteredMeals.length === 0 ? (
@@ -50,22 +50,22 @@ function RecipesPage() {
             filteredMeals.map((meal) => (
               <div
                 key={meal._id}
-                className="border rounded-lg overflow-hidden shadow-lg"
+                className="border rounded-lg overflow-hidden shadow-lg p-2"
               >
                 <Link to={`/recipes/${meal._id}`}> 
                 </Link>
-                <div className="p-4">
-                  <h3 className="text-lg font-bold mb-2 text-default-orange">{meal.name}</h3>
+                <div className="p-2">
+                  <h3 className="text-lg font-bold mb-4">{meal.name}</h3>
                   <p className="text-sm mb-2">
                     {meal.category.map((category, index) => (
-                      <span key={index} className="mr-2">
+                      <span key={index} className="bg-orange-100 mt-4 px-3 py-1 mr-2 mb-2 rounded-full text-orange-800">
                         {category}
                       </span>
                     ))}
                   </p>
                   <Link
                     to={`/recipes/${meal._id}`}
-                    className="text-default-orange hover:text-hover-orange"
+                    className=" text-orange-300 hover:text-orange-400"
                   >
                     View Details
                   </Link>

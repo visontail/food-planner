@@ -3,12 +3,12 @@ import Footer from "../components/Footer"
 
 function AboutPage() {
   return (
-    <div className="min-h-screen flex flex-col justify-between text-default-orange">
+    <div className="min-h-screen flex flex-col justify-between text-orange-800">
       <Header />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h2 className="text-xl font-semibold mb-2">Lorem Ipsum</h2>
-          <p className="text-orange-300 mb-4">
+          <p className="mb-4 ml-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Nullam metus nunc, gravida non tincidunt eget, maximus eget odio.
             Suspendisse in scelerisque nibh, et facilisis justo.
@@ -18,8 +18,8 @@ function AboutPage() {
             Proin fringilla urna vel nulla condimentum bibendum.
             Integer at erat ultricies, pharetra neque at, accumsan mauris.
           </p>
-          <h2 className="text-xl font-semibold mb-2">Lorem Ipsum</h2>
-          <p className="text-orange-300 mb-4">
+          <h2 className="text-xl font-semibold mb-2 mt-10">Lorem Ipsum</h2>
+          <p className="mb-4 ml-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Nullam metus nunc, gravida non tincidunt eget, maximus eget odio.
             Suspendisse in scelerisque nibh, et facilisis justo.

@@ -59,14 +59,14 @@ function Generator() {
   };
 
   return (
-    <div className="shadow-2xl rounded-[20px] p-4 mx-6 mb-10 min-w-fit">
+    <div className="shadow-2xl rounded-[20px] p-4 mx-6 mb-10 min-w-fit bg-orange-100">
       <div className="p-4">
-      <p className="text-gray-600 mb-4">Select the desired categories</p>
+      <p className="text-orange-700 mb-4">Select the desired categories</p>
       <ul className="flex flex-wrap gap-2 m-4">
         {Array.isArray(categories) && categories.length > 0 ? (
           categories.map((category, index) => (
             <li
-            className={`px-2 py-1 rounded-full cursor-pointer ${selectedCategories.includes(category) ? 'bg-orange-200 text-default-orange' : 'text-orange-300 hover:bg-orange-200 hover:text-default-orange'}`}
+            className={`px-2 py-1 rounded-full cursor-pointer ${selectedCategories.includes(category) ? 'bg-orange-300 text-white' : 'text-orange-800 hover:bg-orange-200 hover:text-white'}`}
               key={index}
               onClick={() => selectItem(category)}
             >
@@ -74,12 +74,12 @@ function Generator() {
             </li>
           ))
         ) : (
-          <p className="text-gray-400">No categories found</p>
+          <p className="text-orange-800">No categories found</p>
         )}
       </ul>
-      <p className="text-gray-600 mb-4">Select the number of meals</p>
+      <p className="text-orange-700 mb-4">Select the number of meals</p>
       <select
-        className="bg-orange-300 text-white py-2 px-4 ml-8 rounded-2xl border-r hover:bg-hover-orange mr-10"
+        className="bg-orange-300 text-white py-2 px-4 ml-8 rounded-2xl border-r  mr-10"
         onChange={(e) => changeNumberOfMeals(e.target.value)}
       >
         {[1, 2, 3, 4, 5, 6, 7].map((num) => (
@@ -87,27 +87,27 @@ function Generator() {
         ))}
       </select>
       <button
-        className="flex m-10 ml-auto bg-orange-300 text-white py-2 px-4 rounded-2xl border-r hover:bg-hover-orange"
+        className="flex m-10 ml-auto bg-orange-300 text-white py-2 px-4 rounded-2xl border-r hover:bg-orange-400 hover:text-white cursor-pointer"
         onClick={() => getMeal(numberOfMeals, selectedCategories, categories)}
       >
         Generate
       </button>
       </div>
-      <hr className="my-6 border-orange-200" />
+      <hr className="my-6 border-orange-800" />
       <div className="my-10">
-        <h2 className="text-2xl font-semibold text-orange-300 flex justify-center">
+        <h2 className="text-2xl font-semibold text-orange-800 flex justify-center">
           Meals
         </h2>
         <ul className="list-none p-0 mt-4">
           {meals.length === 0 ? (
-            <li className="text-gray-400 flex justify-center">
+            <li className="text-orange-800 flex justify-center">
               No meals found
             </li>
           ) : (
             meals.map((meal) => (
                 <Link key={meal._id}
                     to={`/recipes/${meal._id}`}
-                    className="flex justify-center text-base text-hover-orange font-medium py-2 px-4  hover:bg-orange-200 hover:text-default-orange rounded-2xl cursor-pointer"
+                    className="flex justify-center text-base text-orange-800 font-medium py-2 px-4  hover:bg-orange-100 hover:text-hover-orange rounded-2xl cursor-pointer"
                   >
                     {meal.name}
                   </Link>
