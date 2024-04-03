@@ -16,11 +16,11 @@ function Header() {
           <Link to="/" className=" hover:text-hover-orange ml-4">
             Home
           </Link>
-          <Link to="/about" className=" hover:text-hover-orange ml-4">
-            About
-          </Link>
           <Link to="/recipes" className=" hover:text-hover-orange ml-4">
             Recipes
+          </Link>
+          <Link to="/about" className=" hover:text-hover-orange ml-4">
+            About
           </Link>
         </div>
         <div className="md:hidden">
