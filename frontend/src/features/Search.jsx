@@ -10,14 +10,14 @@ function Search({ onSearch }) {
   };
 
   return (
-      <>
-          <p>Search field</p>
-          <input
-              type="text"
-              placeholder="Search by name or category"
-              onChange={handleChange}
-          />
-      </>
+    <div className="max-w-xs mx-auto mb-10">
+      <input
+        type="text"
+        placeholder="Search by name or category"
+        onChange={handleChange}
+        className="w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-hover-orange transition-colors duration-300 ease-in-out hover:border-default-orange"
+      />
+    </div>
   );
 }
 

@@ -9,7 +9,6 @@ import { fetchSelectedMeal } from "../services/api.js"
 function ItemPage() {
 
   const recipeId = useParams().recipeId;
-  console.log(recipeId);
 
   const [item, setItem] = useState({});
 
@@ -35,11 +34,7 @@ function ItemPage() {
       <div>
         <h2>THIS IS THE item PAGE</h2>
         <div>
-          <img /* src={item.image_url} */ alt={item.name} />
           <h3>{item.name}</h3>
-          <p>
-            {item.category}
-          </p>
         </div>
       </div>
       <Footer />
