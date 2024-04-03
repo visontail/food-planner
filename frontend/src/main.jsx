@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import HomePage from './pages/home/HomePage'
+import HomePage from './pages/HomePage'
 import RecipesPage from './pages/RecipesPage'
 import AboutPage from './pages/AboutPage'
 import NotFoundPage from './pages/NotFoundPage'

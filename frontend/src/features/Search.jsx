@@ -11,7 +11,6 @@ function Search({ onSearch }) {
 
   return (
     <div className="max-w-xs mx-auto mb-10">
-      <p className="text-center text-default-orange mb-2">Search for foods</p>
       <input
         type="text"
         placeholder="Search by name or category"
