@@ -9,7 +9,7 @@ function Header() {
   };
 
   return (
-    <header className="bg-default-orange py-4 mb-10 rounded">
+    <header className="bg-orange-300 py-4 mb-10 rounded">
       <nav className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-white text-2xl font-semibold"><h2>Food Planner</h2></Link>
         <div className="hidden md:block">

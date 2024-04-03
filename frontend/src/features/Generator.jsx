@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchCategories, fetchMealsWithinCategories } from '../services/api.js';
+import { Link } from 'react-router-dom';
 
 function Generator() {
 
@@ -59,13 +60,13 @@ function Generator() {
 
   return (
     <div className="shadow-2xl rounded-[20px] p-4 mx-6 mb-10 min-w-fit">
-      <h2 className="text-2xl font-semibold text-default-orange">Categories</h2>
-      <p>Select the desired categories</p>
+      <div className="p-4">
+      <p className="text-gray-600 mb-4">Select the desired categories</p>
       <ul className="flex flex-wrap gap-2 m-4">
         {Array.isArray(categories) && categories.length > 0 ? (
           categories.map((category, index) => (
             <li
-            className={`px-2 py-1 rounded-full cursor-pointer ${selectedCategories.includes(category) ? 'bg-orange-200 text-hover-orange' : 'text-default-orange hover:bg-orange-200 hover:text-hover-orange'}`}
+            className={`px-2 py-1 rounded-full cursor-pointer ${selectedCategories.includes(category) ? 'bg-orange-200 text-default-orange' : 'text-orange-300 hover:bg-orange-200 hover:text-default-orange'}`}
               key={index}
               onClick={() => selectItem(category)}
             >
@@ -73,32 +74,28 @@ function Generator() {
             </li>
           ))
         ) : (
-          <li className="text-gray-400">No categories found</li>
+          <p className="text-gray-400">No categories found</p>
         )}
       </ul>
-      <hr className="my-6 border-orange-200" />
-      <p>Select the number of meals</p>
+      <p className="text-gray-600 mb-4">Select the number of meals</p>
       <select
-        className="bg-default-orange text-white py-2 px-4 rounded-2xl border-r hover:bg-hover-orange mr-10"
+        className="bg-orange-300 text-white py-2 px-4 ml-8 rounded-2xl border-r hover:bg-hover-orange mr-10"
         onChange={(e) => changeNumberOfMeals(e.target.value)}
       >
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
+        {[1, 2, 3, 4, 5, 6, 7].map((num) => (
+          <option key={num} value={num}>{num}</option>
+        ))}
       </select>
-      <hr className="my-6 border-orange-200" />
       <button
-        className="bg-default-orange text-white py-2 px-4 rounded-2xl border-r hover:bg-hover-orange"
+        className="flex m-10 ml-auto bg-orange-300 text-white py-2 px-4 rounded-2xl border-r hover:bg-hover-orange"
         onClick={() => getMeal(numberOfMeals, selectedCategories, categories)}
       >
         Generate
       </button>
+      </div>
+      <hr className="my-6 border-orange-200" />
       <div className="my-10">
-        <h2 className="text-2xl font-semibold text-default-orange flex justify-center">
+        <h2 className="text-2xl font-semibold text-orange-300 flex justify-center">
           Meals
         </h2>
         <ul className="list-none p-0 mt-4">
@@ -108,12 +105,12 @@ function Generator() {
             </li>
           ) : (
             meals.map((meal) => (
-              <li
-                key={meal._id}
-                className="flex justify-center text-base text-hover-orange font-medium py-2 px-4  hover:bg-orange-200 rounded-2xl cursor-pointer"
-              >
-                {meal.name}
-              </li>
+                <Link key={meal._id}
+                    to={`/recipes/${meal._id}`}
+                    className="flex justify-center text-base text-hover-orange font-medium py-2 px-4  hover:bg-orange-200 hover:text-default-orange rounded-2xl cursor-pointer"
+                  >
+                    {meal.name}
+                  </Link>
             ))
           )}
         </ul>

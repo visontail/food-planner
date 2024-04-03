@@ -41,7 +41,7 @@ function RecipesPage() {
   return (
     <>
       <Header />
-      <div className="mb-12">
+      <div className="mb-12 text-orange-300">
         <Search onSearch={handleSearch} />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {filteredMeals.length === 0 ? (
@@ -55,7 +55,7 @@ function RecipesPage() {
                 <Link to={`/recipes/${meal._id}`}> 
                 </Link>
                 <div className="p-4">
-                  <h3 className="text-lg font-bold mb-2">{meal.name}</h3>
+                  <h3 className="text-lg font-bold mb-2 text-default-orange">{meal.name}</h3>
                   <p className="text-sm mb-2">
                     {meal.category.map((category, index) => (
                       <span key={index} className="mr-2">
